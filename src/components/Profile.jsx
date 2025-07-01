@@ -63,7 +63,7 @@ export default function Profile({ userProfile, setUserProfile, onLogout, onBack 
 
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/upload-photo", {
+      const res = await fetch("https://japanime-backend.onrender.com/api/upload-photo", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -74,7 +74,7 @@ export default function Profile({ userProfile, setUserProfile, onLogout, onBack 
       if (!res.ok) throw new Error("Upload failed");
 
       const data = await res.json();
-      const fullUrl = `http://localhost:5000/uploads/${data.filename}`;
+      const fullUrl = `https://japanime-backend.onrender.com/${data.filename}`;
 
       setProfile((prev) => ({ ...prev, profile_photo: fullUrl }));
       setSelectedFile(null);
@@ -93,7 +93,7 @@ export default function Profile({ userProfile, setUserProfile, onLogout, onBack 
 
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/remove-photo", {
+      const res = await fetch("https://japanime-backend.onrender.com/api/remove-photo", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -148,7 +148,7 @@ export default function Profile({ userProfile, setUserProfile, onLogout, onBack 
 
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/update-profile", {
+      const res = await fetch("https://japanime-backend.onrender.com/api/update-profile", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

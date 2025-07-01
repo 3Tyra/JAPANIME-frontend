@@ -37,7 +37,7 @@ export default function App() {
   }, [query]);
 
   const fetchUserProfile = () => {
-    fetch("http://localhost:5000/api/profile", {
+    fetch("https://japanime-backend.onrender.com/api/profile", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -51,7 +51,7 @@ export default function App() {
   };
 
   const updateUserProfile = (updatedData) => {
-    fetch("http://localhost:5000/api/update-profile", {
+    fetch("https://japanime-backend.onrender.com/api/update-profile", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

@@ -17,7 +17,7 @@ export default function Register({ onRegisterSuccess }) {
       return alert("Passwords do not match");
     }
 
-    const res = await fetch("http://localhost:5000/api/register", {
+    const res = await fetch("https://japanime-backend.onrender.com/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, email, age, password }),
