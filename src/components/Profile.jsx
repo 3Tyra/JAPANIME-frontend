@@ -74,7 +74,7 @@ export default function Profile({ userProfile, setUserProfile, onLogout, onBack 
       if (!res.ok) throw new Error("Upload failed");
 
       const data = await res.json();
-      const fullUrl = `https://japanime-backend.onrender.com/${data.filename}`;
+      const fullUrl = `https://japanime-backend.onrender.com/uploads/${data.filename}`;
 
       setProfile((prev) => ({ ...prev, profile_photo: fullUrl }));
       setSelectedFile(null);
